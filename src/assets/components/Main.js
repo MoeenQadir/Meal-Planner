@@ -1,6 +1,5 @@
 import React from 'react';
 import MealCard from './MealCard';
-import NormalCard from './NormalCard';
 import EmptyCard from './EmptyCard';
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 import { useDispatch, useSelector } from 'react-redux';
@@ -32,8 +31,8 @@ const Main = () => {
     };
 
     const handleOpenSidebar = (mealType, index, isCardSelected = false) => {
-        const recipes = isCardSelected ? predefinedRecipes : [meals[mealType][index], ...predefinedRecipes];
-        dispatch(openSidebar({ recipes, mealType, index }));
+        const recipes = isCardSelected ? [meals[mealType][index], ...predefinedRecipes] : predefinedRecipes;
+        dispatch(openSidebar({ recipes, mealType, index, isCardSelected }));
     };
 
     return (
@@ -61,7 +60,7 @@ const Main = () => {
             </div>
             {['breakfast', 'lunch', 'dinner'].map((mealType) => (
                 <div key={mealType} className="grid grid-cols-7 gap-4 mt-4 -ms-40">
-                    <div className="col-span-1 ms-12 flex justify-start items-end font-bold transform -rotate-90 origin-center w-12 capitalize">{mealType}</div>
+                    <div className="col-span-1 ms-16 flex justify-start items-end font-bold transform -rotate-90 origin-center w-12 capitalize">{mealType}</div>
                     <DragDropContext onDragEnd={(result) => handleDragEnd(result, mealType)}>
                         <Droppable droppableId={mealType} direction="horizontal">
                             {(provided) => (

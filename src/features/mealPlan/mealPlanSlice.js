@@ -1,3 +1,4 @@
+// mealPlanSlice.js
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
@@ -11,6 +12,7 @@ const initialState = {
         recipeList: [],
         mealType: null,
         index: null,
+        isCardSelected: false,
     },
 };
 
@@ -23,12 +25,10 @@ const mealPlanSlice = createSlice({
             state.sidebar.recipeList = action.payload.recipes;
             state.sidebar.mealType = action.payload.mealType;
             state.sidebar.index = action.payload.index;
+            state.sidebar.isCardSelected = action.payload.isCardSelected || false;
         },
         closeSidebar: (state) => {
             state.sidebar.isOpen = false;
-            state.sidebar.recipeList = [];
-            state.sidebar.mealType = null;
-            state.sidebar.index = null;
         },
         addMeal: (state, action) => {
             const { mealType, index, meal } = action.payload;
@@ -40,8 +40,8 @@ const mealPlanSlice = createSlice({
         },
         reorderMeals: (state, action) => {
             const { mealType, sourceIndex, destinationIndex } = action.payload;
-            const [removed] = state.meals[mealType].splice(sourceIndex, 1);
-            state.meals[mealType].splice(destinationIndex, 0, removed);
+            const [movedMeal] = state.meals[mealType].splice(sourceIndex, 1);
+            state.meals[mealType].splice(destinationIndex, 0, movedMeal);
         },
     },
 });
