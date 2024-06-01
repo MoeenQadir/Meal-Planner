@@ -33,37 +33,39 @@ const MealCard = ({ meal, mealType, index, showViewRecipeButton = true, showRemo
     };
 
     return (
-        <div className="relative border rounded shadow p-4">
+        <div className="relative border rounded-xl shadow pb-4">
             <img src={meal.image} alt={meal.title} className="w-full h-24 object-cover rounded mb-2" />
-            <div className="font-bold">{meal.title}</div>
-            <div className="text-sm text-gray-600">{meal.duration} mins</div>
-            {showViewRecipeButton && (
-                <button
-                    className="mt-2 bg-transparent w-full mt-2 border border-red-500 text-red-500 py-1 px-4 rounded hover:bg-red-500 hover:text-white transition-colors duration-300"
-                    onClick={handleViewRecipe}
-                >
-                    View Recipe →
-                </button>
+            <div className="font-bold px-4">{meal.title}</div>
+            <div className="text-sm text-gray-600 px-4">{meal.duration} mins</div>
+           <div className={"px-4"}>
+               {showViewRecipeButton && (
+                   <button
+                       className="mt-2 bg-transparent w-full mt-2 border border-red-500 text-red-500 py-1 px-4 rounded hover:bg-red-500 hover:text-white transition-colors duration-300"
+                       onClick={handleViewRecipe}
+                   >
+                       View Recipe →
+                   </button>
 
-            )}
-            {showRemoveButton && (
-                <button
-                    className="absolute top-2 right-2 w-6 h-6 flex justify-center items-center bg-red-500 text-white rounded-full p-1"
-                    onClick={handleRemoveRecipe}
-                >
-                    X
-                </button>
-            )}
-            {!showViewRecipeButton && (
-                <>
-                    <button
-                        className="mt-2 bg-transparent w-full mt-2 border border-red-500 text-red-500 py-1 px-4 rounded hover:bg-red-500 hover:text-white transition-colors duration-300"
-                        onClick={handleAddToPlanner}
-                    >
-                        Add to Planner +
-                    </button>
-                </>
-            )}
+               )}
+               {showRemoveButton && (
+                   <button
+                       className="absolute top-2 right-2 w-6 h-6 flex justify-center items-center bg-red-500 text-white rounded-full p-1"
+                       onClick={handleRemoveRecipe}
+                   >
+                       X
+                   </button>
+               )}
+               {!showViewRecipeButton && (
+                   <>
+                       <button
+                           className="mt-2 bg-transparent w-full mt-2 border border-red-500 text-red-500 py-1 px-3 rounded hover:bg-red-500 hover:text-white transition-colors duration-300"
+                           onClick={handleAddToPlanner}
+                       >
+                           Add to Planner +
+                       </button>
+                   </>
+               )}
+           </div>
         </div>
     );
 };
