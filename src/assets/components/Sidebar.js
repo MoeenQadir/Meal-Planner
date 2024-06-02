@@ -41,7 +41,7 @@ const Sidebar = () => {
             </button>
             <h2 className="text-xl font-bold mb-4">{isCardSelected ? 'Selected Recipes' : 'Select a Recipe'}</h2>
             {isCardSelected && (
-                <div className="mb-4 w-4/12 mx-auto">
+                <div className="mb-4 md:w-4/12 w-6/12 mx-auto">
                     <MealCard meal={recipeList[0]} mealType={mealType} index={index} showViewRecipeButton={false} showRemoveButton />
                 </div>
             )}
