@@ -20,7 +20,7 @@ const Navbar = () => {
                         className="absolute left-3 top-2.5 text-white text-lg"
                     />
                 </div>
-                <a href="#" className="ml-8 text-white underline decoration-dotted underline-offset-4">Browse All Categories</a>
+                <a href="/" className="ml-8 text-white underline decoration-dotted underline-offset-4">Browse All Categories</a>
             </div>
             <div className="flex space-x-4 me-20">
                 <a href="https://www.facebook.com" className="text-white">
