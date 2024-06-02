@@ -27,7 +27,8 @@ The Meal Planner project is a web application designed to help users plan their 
 ## Tech Stack
 - **Frontend:** React, Redux, Tailwind CSS
 - **Libraries:** React-Beautiful-DnD, FontAwesome
-- **Deployment:** Netlify
+- **Deployment:** Vercel
+- **Live Link:** https://meal-planner-sol.vercel.app/
 
 ## Project Structure
 meal-planner/
