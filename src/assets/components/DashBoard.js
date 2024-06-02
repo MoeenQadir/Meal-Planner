@@ -9,7 +9,7 @@ import predefinedRecipes from "../../data/predefineRecipe";
 
 const mealsSelector = (state) => state.mealPlan.meals;
 
-const Main = () => {
+const DashBoard = () => {
     const dispatch = useDispatch();
     const meals = useSelector(mealsSelector);
     const containerRef = useRef(null);
@@ -107,4 +107,4 @@ const Main = () => {
     );
 };
 
-export default Main;
+export default DashBoard;

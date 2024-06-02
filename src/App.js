@@ -1,7 +1,7 @@
 import React from 'react';
 import Navbar from "./assets/components/Navbar";
 import LeftBar from "./assets/components/LeftBar";
-import Main from "./assets/components/Main";
+import DashBoard from "./assets/components/DashBoard";
 import Sidebar from "./assets/components/Sidebar";
 const App = () => {
     return (
@@ -9,7 +9,7 @@ const App = () => {
             <Navbar />
             <div className="flex flex-1 bg-custom-bg ">
                 <LeftBar />
-                <Main />
+                <DashBoard />
             </div>
             <Sidebar/>
         </div>
