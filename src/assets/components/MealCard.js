@@ -1,6 +1,8 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import {openSidebar, removeMeal, addMeal, closeSidebar} from '../../features/mealPlan/mealPlanSlice';
+import {MdOutlineDeleteOutline} from "react-icons/md";
+import predefinedRecipes from "../../data/predefineRecipe";
 
 const MealCard = ({ meal, mealType, index, showViewRecipeButton = true, showRemoveButton = false }) => {
     const dispatch = useDispatch();
@@ -10,14 +12,7 @@ const MealCard = ({ meal, mealType, index, showViewRecipeButton = true, showRemo
     }
 
     const handleViewRecipe = () => {
-        const predefinedRecipes = [
-            { id: 1, image: '/assets/img/food.png', title: 'Coffee Coconut Breakfast Cookies', duration: 15 },
-            { id: 2, image: '/assets/img/food.png', title: 'Coffee Coconut Breakfast Cookies', duration: 20 },
-            { id: 3, image: '/assets/img/food.png', title: 'Coffee Coconut Breakfast Cookies', duration: 15 },
-            { id: 4, image: '/assets/img/food.png', title: 'Coffee Coconut Breakfast Cookies', duration: 20 },
-            { id: 5, image: '/assets/img/food.png', title: 'Coffee Coconut Breakfast Cookies', duration: 15 },
-            { id: 6, image: '/assets/img/food.png', title: 'Coffee Coconut Breakfast Cookies', duration: 20 },
-        ];
+
         dispatch(openSidebar({ recipes: [meal, ...predefinedRecipes], mealType, index, isCardSelected: true }));
     };
 
@@ -33,10 +28,10 @@ const MealCard = ({ meal, mealType, index, showViewRecipeButton = true, showRemo
     };
 
     return (
-        <div className="relative border rounded-xl shadow pb-4">
+        <div className="relative border rounded-xl  shadow pb-4">
             <img src={meal.image} alt={meal.title} className="w-full h-24 object-cover rounded mb-2" />
-            <div className="font-bold px-4">{meal.title}</div>
-            <div className="text-sm text-gray-600 px-4">{meal.duration} mins</div>
+            <div className="lg:font-bold text-sm px-2 lg:px-4">{meal.title}</div>
+            <div className="text-sm text-gray-600 px-2 lg:px-4">{meal.duration} mins</div>
            <div className={"px-4"}>
                {showViewRecipeButton && (
                    <button
@@ -49,16 +44,17 @@ const MealCard = ({ meal, mealType, index, showViewRecipeButton = true, showRemo
                )}
                {showRemoveButton && (
                    <button
-                       className="absolute top-2 right-2 w-6 h-6 flex justify-center items-center bg-red-500 text-white rounded-full p-1"
+                       className="absolute top-2 right-2 w-7 h-7 flex justify-center items-center bg-red-500 text-white rounded-full p-1"
                        onClick={handleRemoveRecipe}
                    >
-                       X
+                       <MdOutlineDeleteOutline />
+
                    </button>
                )}
                {!showViewRecipeButton && (
                    <>
                        <button
-                           className="mt-2 bg-transparent w-full mt-2 border border-red-500 text-red-500 py-1 px-3 rounded hover:bg-red-500 hover:text-white transition-colors duration-300"
+                           className="mt-2 bg-transparent w-full mt-2 border border-red-500 text-red-500 py-1 md:px-3 rounded hover:bg-red-500 hover:text-white transition-colors duration-300"
                            onClick={handleAddToPlanner}
                        >
                            Add to Planner +
