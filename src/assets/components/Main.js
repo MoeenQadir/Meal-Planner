@@ -60,12 +60,12 @@ const Main = () => {
                 ))}
             </div>
             {['breakfast', 'lunch', 'dinner'].map((mealType) => (
-                <div key={mealType} className="grid grid-cols-7 gap-4 mt-4 -ms-40">
-                    <div className="col-span-1 ms-16 flex justify-start items-end font-bold transform -rotate-90 origin-center w-12 capitalize">
-                        {mealType === 'breakfast' && <img src="/path/to/breakfast-icon.png" alt="Breakfast Icon" className="w-6 h-6 mr-2" />}
-                        {mealType === 'lunch' && <img src="/path/to/lunch-icon.png" alt="Lunch Icon" className="w-6 h-6 mr-2" />}
-                        {mealType === 'dinner' && <img src="/path/to/dinner-icon.png" alt="Dinner Icon" className="w-6 h-6 mr-2" />}
-                        {mealType}
+                <div key={mealType} className="grid grid-cols-7 gap-2 mt-4 -ms-40">
+                    <div className="col-span-1 ms-44 flex justify-start items-center font-bold transform -rotate-90 origin-center w-12 capitalize">
+                        {mealType === 'breakfast' && <span className={"text-2xl"}>🍳</span>}
+                        {mealType === 'lunch' && <span className={"text-2xl"}>🥗</span>}
+                        {mealType === 'dinner' && <span className={"text-2xl"}>🍲</span>}
+                        <div className="ms-2">{mealType}</div>
                     </div>
                     <DragDropContext onDragEnd={handleDragEnd}>
                         <Droppable droppableId={mealType} direction="horizontal">
