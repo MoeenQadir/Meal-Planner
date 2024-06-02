@@ -41,7 +41,7 @@ const Main = () => {
 
     return (
         <div className="w-11/12 px-4 mx-auto mt-20 flex-1">
-            <div className={"w-full lg:w-11/12 lg:shadow-2xl rounded-md lg:px-4 my-10"}>
+            <div className={"w-full lg:w-11/12 lg:shadow-md rounded-md lg:px-4 my-10"}>
                 <div className="flex w-11/12 mx-auto mb-24 justify-between flex-col space-y-10 lg:space-y-0 text-center lg:text-start lg:flex-row items-center bg-white">
                     <div>
                         <div className="text-md font-bold text-gray-700 mb-2">New!</div>

@@ -24,7 +24,7 @@ const Navbar = () => {
                     </button>
                 </div>
                 <div className="hidden lg:flex items-center flex-grow">
-                    <div className="relative flex-grow max-w-xl ms-32">
+                    <div className="relative flex-grow max-w-md ms-20 ">
                         <input
                             type="text"
                             placeholder="Search by recipe name, food type, etc."
@@ -36,7 +36,7 @@ const Navbar = () => {
                             className="absolute left-3 top-2.5 text-white text-lg"
                         />
                     </div>
-                    <a href="/" className="text-white underline -me-10 decoration-dotted underline-offset-4">
+                    <a href="/" className="text-white underline ms-20 decoration-dotted underline-offset-4">
                         Browse All Categories
                     </a>
                     <div className="flex justify-end items-end w-4/12 space-x-4">

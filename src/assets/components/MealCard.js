@@ -28,14 +28,14 @@ const MealCard = ({ meal, mealType, index, showViewRecipeButton = true, showRemo
     };
 
     return (
-        <div className="relative border rounded-xl  shadow pb-4">
+        <div className="relative border rounded-xl hover:scale-105 shadow pb-4" style={{ boxShadow: 'rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px', transition: 'transform 0.3s ease-in-out' }}>
             <img src={meal.image} alt={meal.title} className="w-full h-24 object-cover rounded mb-2" />
-            <div className="lg:font-bold text-sm px-2 lg:px-4">{meal.title}</div>
+            <div className="lg:font-bold text-md px-2 lg:px-4">{meal.title}</div>
             <div className="text-sm text-gray-600 px-2 lg:px-4">{meal.duration} mins</div>
            <div className={"px-4"}>
                {showViewRecipeButton && (
                    <button
-                       className="mt-2 bg-transparent w-full mt-2 border border-red-500 text-red-500 py-1 px-4 rounded hover:bg-red-500 hover:text-white transition-colors duration-300"
+                       className="mt-2 bg-transparent w-full mt-2 border border-red-500 text-red-500 py-1 lg:px-4 px-1 rounded hover:bg-red-500 hover:text-white transition-colors duration-300"
                        onClick={handleViewRecipe}
                    >
                        View Recipe →

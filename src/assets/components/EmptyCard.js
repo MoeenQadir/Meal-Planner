@@ -4,8 +4,8 @@ import { faSadTear } from '@fortawesome/free-solid-svg-icons';
 
 const EmptyCard = ({ onAddRecipe }) => {
     return (
-        <div className="max-w-xs rounded overflow-hidden shadow-md rounded-xl bg-white flex flex-col items-center justify-center p-4">
-            <div className="bg-blue-100 p-4 rounded-full ">
+        <div className="max-w-xs hover:scale-105 rounded overflow-hidden rounded-xl  bg-white flex flex-col items-center justify-center p-4" style={{ boxShadow: 'rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px', transition: 'transform 0.3s ease-in-out' }}>
+            <div className="bg-blue-100 p-4 animate-pulse rounded-full ">
                 <FontAwesomeIcon icon={faSadTear} className="text-blue-500 text-4xl" />
             </div>
             <div className="my-4">
